@@ -16,13 +16,13 @@ class MainBottomNavBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
           colors: <Color>[
-            AppColors().darkGreen,
-            AppColors().darkGreen,
-            AppColors().lightGreen,
+            AppColors.darkGreen,
+            AppColors.darkGreen,
+            AppColors.lightGreen,
             // AppColors().lightGreen,
           ],
         ),

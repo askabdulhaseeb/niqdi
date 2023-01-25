@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/customs/custom_scaffold.dart';
 import 'main_bottom_nav_bar.dart';
 
 class MainScreen extends StatelessWidget {
@@ -7,9 +8,12 @@ class MainScreen extends StatelessWidget {
   static const String routeName = '/main-screen';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('MainScreen')),
-      bottomNavigationBar: MainBottomNavBar(),
+    return CustomScaffold(
+      scaffold: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(),
+        bottomNavigationBar: MainBottomNavBar(),
+      ),
     );
   }
 }
