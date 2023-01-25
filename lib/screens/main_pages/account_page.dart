@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utilities/app_images.dart';
+import '../../widgets/customs/custom_image_slider.dart';
 import '../../widgets/customs/gradient_icon.dart';
 
 class AccountPage extends StatelessWidget {
@@ -33,7 +34,11 @@ class AccountPage extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(child: Text('Account Page')),
+      body: Column(
+        children: <Widget>[
+          const CustomImageSlider(),
+        ],
+      ),
     );
   }
 }
