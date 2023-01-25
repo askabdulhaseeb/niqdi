@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 
 import '../../utilities/app_colors.dart';
 
-class GradientIcon extends StatelessWidget {
-  const GradientIcon({
-    required this.icon,
+class CustomGradientIcon extends StatelessWidget {
+  const CustomGradientIcon(
+    this.icon, {
     this.gradient,
     this.size = 26,
+    this.isDisable = false,
     Key? key,
   }) : super(key: key);
 
   final IconData icon;
   final double size;
   final Gradient? gradient;
+  final bool isDisable;
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +31,18 @@ class GradientIcon extends StatelessWidget {
       ),
       shaderCallback: (Rect bounds) {
         final Rect rect = Rect.fromLTRB(0, 0, size, size);
-        return gradient?.createShader(rect) ??
-            const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: <Color>[
-                AppColors.darkPink,
-                AppColors.darkBlue,
-              ],
-            ).createShader(rect);
+        return isDisable
+            ? const LinearGradient(colors: <Color>[Colors.grey, Colors.grey])
+                .createShader(rect)
+            : gradient?.createShader(rect) ??
+                const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[
+                    AppColors.darkPink,
+                    AppColors.darkBlue,
+                  ],
+                ).createShader(rect);
       },
     );
   }

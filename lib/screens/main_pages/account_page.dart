@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utilities/app_images.dart';
+import '../../widgets/customs/custom_gradient_text.dart';
 import '../../widgets/customs/custom_image_slider.dart';
-import '../../widgets/customs/gradient_icon.dart';
+import '../../widgets/customs/custom_gradient_icon.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -37,6 +38,8 @@ class AccountPage extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const CustomImageSlider(),
+          const CustomGradientText('cash Balance (in wallet)'),
+          Container(),
         ],
       ),
     );
@@ -64,7 +67,7 @@ class AppBarIconWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           if (!onRight) Text(title),
-          GradientIcon(icon: icon),
+          CustomGradientIcon(icon),
           if (onRight) Text(title),
         ],
       ),
