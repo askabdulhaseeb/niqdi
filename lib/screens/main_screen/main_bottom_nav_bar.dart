@@ -87,14 +87,14 @@ class BottomNavItem extends StatelessWidget {
           Icon(
             icon,
             color: isSelected
-                ? Theme.of(context).scaffoldBackgroundColor
+                ? Theme.of(context).cardColor
                 : Theme.of(context).textTheme.bodyText1!.color,
           ),
           Text(
             title,
             style: TextStyle(
               color: isSelected
-                  ? Theme.of(context).scaffoldBackgroundColor
+                  ? Theme.of(context).cardColor
                   : Theme.of(context).textTheme.bodyText1!.color,
             ),
           ),
