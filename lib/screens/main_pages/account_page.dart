@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
 import '../../widgets/account/account_card_list_widget.dart';
+import '../../widgets/account/profile_drawer.dart';
 import '../../widgets/customs/custom_fraction_amount.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
 import '../../widgets/customs/custom_gradient_text_button.dart';
@@ -21,30 +22,49 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final double _amount = Random().nextInt(10) % 2 == 0 ? 0 : 143.42;
     return Scaffold(
+      endDrawer: const ProfileDrawer(),
+      endDrawerEnableOpenDragGesture: true,
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            AppBarIconWidget(
-              // TODO: menu icon need to update
-              icon: Icons.menu,
-              title: 'القائمة',
-              onRight: true,
-              onTap: () {},
+            Builder(
+              builder: (BuildContext context) => IconButton(
+                icon: AppBarIconWidget(
+                  // TODO: menu icon need to update
+                  icon: Icons.menu,
+                  title: 'القائمة',
+                  onRight: true,
+                  onTap: () => Scaffold.of(context).openEndDrawer(),
+                ),
+                onPressed: () => Scaffold.of(context).openEndDrawer(),
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              ),
             ),
+            const SizedBox(width: 10),
             SizedBox(
               height: 40,
               width: 40,
               child: Image.asset(AppImages.logo),
             ),
-            AppBarIconWidget(
-              icon: CupertinoIcons.profile_circled,
-              title: 'سجّل الدخول',
-              onRight: false,
-              onTap: () {},
-            ),
+            const SizedBox(width: 10),
           ],
         ),
+        actions: <Widget>[
+          Builder(
+            builder: (BuildContext context) => IconButton(
+              icon: AppBarIconWidget(
+                icon: CupertinoIcons.profile_circled,
+                title: 'سجّل الدخول',
+                onRight: false,
+                onTap: () {},
+              ),
+              onPressed: () {},
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            ),
+          ),
+          const SizedBox(width: 10),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
