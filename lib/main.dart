@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
+          fontFamily: 'Effra',
           scaffoldBackgroundColor: Colors.transparent,
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(color: Colors.black),
