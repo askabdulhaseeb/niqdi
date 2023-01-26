@@ -10,14 +10,14 @@ class CustomFractionAmount extends StatelessWidget {
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          color: Theme.of(context).textTheme.bodyText1!.color,
+          color: Theme.of(context).textTheme.bodyLarge!.color,
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
         children: <TextSpan>[
           const TextSpan(
-            text: 'SAR ',
-            style: TextStyle(fontWeight: FontWeight.w400),
+            text: 'ريال ',
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
           TextSpan(
               text: NumberFormat().format(double.parse(amount
@@ -28,7 +28,7 @@ class CustomFractionAmount extends StatelessWidget {
             text: amount
                 .toStringAsFixed(2)
                 .substring(amount.toString().indexOf('.')),
-          )
+          ),
         ],
       ),
     );

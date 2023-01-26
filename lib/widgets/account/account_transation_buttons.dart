@@ -20,11 +20,11 @@ class AccountTransationButtons extends StatelessWidget {
               isDisable: _amount <= 0 ? true : false,
             ),
             Text(
-              'History',
+              'تاريخ العمليات',
               style: TextStyle(
                 color: _amount <= 0
                     ? Colors.grey
-                    : Theme.of(context).textTheme.bodyText1!.color,
+                    : Theme.of(context).textTheme.bodyLarge!.color,
                 fontSize: 24,
               ),
             ),
@@ -39,11 +39,11 @@ class AccountTransationButtons extends StatelessWidget {
               isDisable: _amount <= 0 ? true : false,
             ),
             Text(
-              'Account',
+              'تحويل لحسابي',
               style: TextStyle(
                 color: _amount <= 0
                     ? Colors.grey
-                    : Theme.of(context).textTheme.bodyText1!.color,
+                    : Theme.of(context).textTheme.bodyLarge!.color,
                 fontSize: 24,
               ),
             ),

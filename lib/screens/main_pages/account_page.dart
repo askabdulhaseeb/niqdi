@@ -15,7 +15,7 @@ import '../../widgets/customs/custom_slider_button.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
-  static const double _amount = 173.432;
+  static const double _amount = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class AccountPage extends StatelessWidget {
             AppBarIconWidget(
               // TODO: menu icon need to update
               icon: Icons.menu,
-              title: 'Side Menu',
+              title: 'القائمة',
               onRight: true,
               onTap: () {},
             ),
@@ -37,7 +37,7 @@ class AccountPage extends StatelessWidget {
             ),
             AppBarIconWidget(
               icon: CupertinoIcons.profile_circled,
-              title: 'Sign In',
+              title: 'سجّل الدخول',
               onRight: false,
               onTap: () {},
             ),
@@ -49,7 +49,7 @@ class AccountPage extends StatelessWidget {
           children: <Widget>[
             const SizedBox(height: 20),
             const CustomImageSlider(),
-            const CustomGradientText('cash Balance (in wallet)'),
+            const CustomGradientText('الرصيد النقدي'),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: CustomFractionAmount(amount: _amount),
@@ -84,12 +84,15 @@ class AccountPage extends StatelessWidget {
               ),
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: CustomGradientText('My Cards'),
+              child:
+                  CustomGradientText(_amount > 0 ? 'My Card' : 'بطاقات نقدي'),
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 32),
               child: Text(
-                'This is just a hint text which can be in multiphle lines',
+                _amount > 0
+                    ? 'This is just a hint text which can be in multiphle lines'
+                    : 'سجل بطاقاتك هنا وحول رصيدها نقدي في حسابك',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 18),
               ),
@@ -98,7 +101,7 @@ class AccountPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: CustomGradientText(
-                'Sign up to more Loyalty Program',
+                '!اشترك ببرامج ولاء أكثر',
                 gradient: LinearGradient(
                   colors: <Color>[
                     AppColors.lightGreen,
@@ -114,14 +117,14 @@ class AccountPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 32),
               child: Text(
-                'This is just a hint text which can be in multiphle lines',
+                'بضغطة زر تقدر تسجل بكل هالبرامج وتبدأ تكسب نقاط وتحولها لرصيد',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 18),
               ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 56),
-              child: CustomSliderButton(),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 42),
+              child: CustomSliderButton(text: '!سجلني بكل هالبرامج الحين'),
             ),
             const AccountCardListWidget(),
             const SizedBox(height: 30),

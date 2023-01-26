@@ -56,7 +56,7 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const <Widget>[
                         Text(
-                          'SAR 29 =',
+                          'ريال 29 =',
                           style: TextStyle(color: Colors.white),
                         ),
                         Text(
@@ -138,7 +138,7 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
               const SizedBox(width: 20),
               const Expanded(
                   child: Text(
-                'Your balance After this transation is 202.4 SAR',
+                'Your balance After this transation is 202.4 ريال',
                 style: TextStyle(color: Colors.white),
               )),
             ],

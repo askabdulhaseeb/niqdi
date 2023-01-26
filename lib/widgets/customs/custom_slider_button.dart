@@ -7,7 +7,8 @@ import '../../utilities/app_colors.dart';
 import 'custom_gradient_text.dart';
 
 class CustomSliderButton extends StatelessWidget {
-  const CustomSliderButton({super.key});
+  const CustomSliderButton({required this.text, super.key});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +46,9 @@ class CustomSliderButton extends StatelessWidget {
           child: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
         ),
         direction: TextDirection.rtl,
-        child: const CustomGradientText(
-          'The Button Text',
-          gradient: LinearGradient(
+        child: CustomGradientText(
+          text,
+          gradient: const LinearGradient(
             colors: <Color>[
               AppColors.lightGreen,
               AppColors.darkGreen,

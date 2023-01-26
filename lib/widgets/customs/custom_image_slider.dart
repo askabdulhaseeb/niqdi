@@ -61,8 +61,8 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
       activeIndex: activeIndex,
       count: imgList.length,
       effect: WormEffect(
-        dotHeight: 8,
-        dotWidth: 10,
+        dotHeight: 6,
+        dotWidth: 8,
         spacing: 3,
         dotColor: const Color(0xFFD9D9D9),
         activeDotColor: Theme.of(context).primaryColor,

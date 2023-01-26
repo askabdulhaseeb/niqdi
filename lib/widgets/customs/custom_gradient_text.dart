@@ -39,7 +39,7 @@ class CustomGradientText extends StatelessWidget {
         textAlign: TextAlign.center,
         style: style ??
             const TextStyle(
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.bold,
               fontSize: 24,
             ),
       ),

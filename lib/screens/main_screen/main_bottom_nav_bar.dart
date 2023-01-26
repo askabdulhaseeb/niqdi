@@ -36,13 +36,13 @@ class MainBottomNavBar extends StatelessWidget {
             children: <Widget>[
               BottomNavItem(
                 icon: CupertinoIcons.profile_circled,
-                title: 'حساب',
+                title: 'الحساب',
                 isSelected: currentIndex == 0,
                 onTap: () => appPro.onIndexUpdate(0),
               ),
               BottomNavItem(
                 icon: CupertinoIcons.tag,
-                title: 'متجر',
+                title: 'المتجر',
                 isSelected: currentIndex == 1,
                 onTap: () => appPro.onIndexUpdate(1),
               ),
@@ -55,7 +55,7 @@ class MainBottomNavBar extends StatelessWidget {
               BottomNavItem(
                 icon: CupertinoIcons.home,
                 isSelected: currentIndex == 3,
-                title: 'قائمة',
+                title: 'الرئيسية',
                 onTap: () => appPro.onIndexUpdate(3),
               ),
             ],
