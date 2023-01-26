@@ -31,10 +31,10 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
             return Container(
               decoration: BoxDecoration(
                 color: Colors.black,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
                   image: AssetImage(imgList[index]),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             );
@@ -49,7 +49,7 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
             //height: width,
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 4),
         buildIndicator(context),
         const SizedBox(height: 10),
       ],
@@ -62,7 +62,8 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
       count: imgList.length,
       effect: WormEffect(
         dotHeight: 8,
-        dotWidth: 8,
+        dotWidth: 10,
+        spacing: 3,
         dotColor: const Color(0xFFD9D9D9),
         activeDotColor: Theme.of(context).primaryColor,
       ),

@@ -7,7 +7,7 @@ class CustomGradientIcon extends StatelessWidget {
   const CustomGradientIcon(
     this.icon, {
     this.gradient,
-    this.size = 26,
+    this.size = 28,
     this.isDisable = false,
     Key? key,
   }) : super(key: key);

@@ -27,7 +27,8 @@ class MainScreen extends StatelessWidget {
           builder: (BuildContext context, AppProvider appPro, _) =>
               _page[appPro.currentIndex],
         ),
-        bottomNavigationBar: const MainBottomNavBar(),
+        // bottomNavigationBar: const MainBottomNavBar(),
+        floatingActionButton: const MainBottomNavBar(),
       ),
     );
   }

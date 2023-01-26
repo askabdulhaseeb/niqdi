@@ -7,7 +7,7 @@ class CustomScaffold extends StatelessWidget {
   final Scaffold scaffold;
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width / 2;
+    final double width = MediaQuery.of(context).size.width / 1.2;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -16,7 +16,7 @@ class CustomScaffold extends StatelessWidget {
           SizedBox(
             height: width,
             width: width,
-            child: Image.asset(AppImages.backgroundGrayLogo),
+            child: Image.asset(AppImages.backgroundGrayLogo, fit: BoxFit.fill),
           ),
           scaffold,
         ],

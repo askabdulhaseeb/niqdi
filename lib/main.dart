@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Naqdi',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          useMaterial3: true,
           scaffoldBackgroundColor: Colors.transparent,
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(color: Colors.black),
