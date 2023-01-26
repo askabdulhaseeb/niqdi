@@ -1,5 +1,7 @@
 # naqdi
 
+<a href="https://wakatime.com/badge/user/a62cfb23-ccbd-4bfc-b190-5dd5c13cd292/project/1e32adc2-dc3f-4310-b6eb-5312f547ed94"><img src="https://wakatime.com/badge/user/a62cfb23-ccbd-4bfc-b190-5dd5c13cd292/project/1e32adc2-dc3f-4310-b6eb-5312f547ed94.svg" alt="wakatime"></a>
+
 A new Flutter project.
 
 ## Getting Started
