@@ -1,13 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
+import '../../widgets/account/account_card_list_widget.dart';
 import '../../widgets/customs/custom_fraction_amount.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
+import '../../widgets/customs/custom_gradient_text_button.dart';
 import '../../widgets/customs/custom_image_slider.dart';
 import '../../widgets/customs/custom_gradient_icon.dart';
 import '../../widgets/account/account_tranfer_niqdi_card_widget.dart';
 import '../../widgets/account/account_transation_buttons.dart';
+import '../../widgets/customs/custom_slider_button.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -57,12 +61,18 @@ class AccountPage extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: <Widget>[
                   Container(
-                    height: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.width / 1.15,
                     margin: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Image.asset(AppImages.middelBackgroundImage),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        AppImages.middelBackgroundImage,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                   const Positioned(
                     left: 20,
@@ -72,9 +82,57 @@ class AccountPage extends StatelessWidget {
                   ),
                 ],
               ),
-            Container(
-              height: 100,
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CustomGradientText('My Cards'),
             ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text(
+                'This is just a hint text which can be in multiphle lines',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            const AccountCardListWidget(),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CustomGradientText(
+                'Sign up to more Loyalty Program',
+                gradient: LinearGradient(
+                  colors: <Color>[
+                    AppColors.lightGreen,
+                    AppColors.lightGreen,
+                    AppColors.lightGreen,
+                    AppColors.darkGreen,
+                    AppColors.darkGreen,
+                    AppColors.darkGreen,
+                  ],
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text(
+                'This is just a hint text which can be in multiphle lines',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 56),
+              child: CustomSliderButton(),
+            ),
+            const AccountCardListWidget(),
+            const SizedBox(height: 30),
+            SizedBox(
+              width: 200,
+              child: CustomGradientTextButton(
+                text: 'Cards Galary',
+                onTap: () {},
+              ),
+            ),
+            const SizedBox(height: 120),
           ],
         ),
       ),

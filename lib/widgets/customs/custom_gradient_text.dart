@@ -6,11 +6,13 @@ class CustomGradientText extends StatelessWidget {
   const CustomGradientText(
     this.text, {
     this.gradient,
+    this.textAlign,
     this.style,
     super.key,
   });
 
   final String text;
+  final TextAlign? textAlign;
   final TextStyle? style;
   final Gradient? gradient;
 
@@ -34,10 +36,11 @@ class CustomGradientText extends StatelessWidget {
           ),
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: style ??
             const TextStyle(
               fontWeight: FontWeight.w900,
-              fontSize: 18,
+              fontSize: 24,
             ),
       ),
     );

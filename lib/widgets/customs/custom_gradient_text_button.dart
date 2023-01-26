@@ -17,7 +17,7 @@ class CustomGradientTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(16),
         alignment: Alignment.center,
