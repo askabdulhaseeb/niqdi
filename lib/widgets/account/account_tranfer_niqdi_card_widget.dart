@@ -22,7 +22,7 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
             ),
           ),
           child: SizedBox(
-            height: width / 2.4,
+            height: width / 2.6,
             width: width / 2.2,
             child: Image.asset(
               AppImages.card2,
@@ -60,10 +60,10 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                         Text(
-                          'Naqdi',
+                          'نقطة',
                           style: TextStyle(
-                            color: Colors.white,
                             fontSize: 20,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         )
@@ -82,7 +82,7 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
                         Expanded(
                           child: FittedBox(
                             child: Text(
-                              'Card Name',
+                              'الفرسان الذهبية',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -92,16 +92,22 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
                     Row(
                       children: <Widget>[
                         const Expanded(
                           child: Text(
-                            'Latesr update: Yesrerday 8:42 PM',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                            'آخر تحديث: أمس، 8:42 م',
+                            textDirection: TextDirection.rtl,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
+                        const SizedBox(width: 6),
                         Container(
-                          padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: const LinearGradient(
@@ -114,7 +120,11 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
                               ],
                             ),
                           ),
-                          child: const Icon(Icons.update_outlined),
+                          // TODO: ICON NEED TO UPDATE
+                          child: const Icon(
+                            Icons.update_outlined,
+                            color: AppColors.extreamDarkGreen,
+                          ),
                         ),
                       ],
                     ),
@@ -128,19 +138,22 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: <Widget>[
-              SizedBox(
-                width: width / 3.5,
-                child: CustomGradientTextButton(
-                  text: 'Tranfer',
-                  onTap: () {},
+              CustomGradientTextButton(
+                text: 'حولها نقدي',
+                onTap: () {},
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: FittedBox(
+                    child: Text(
+                      'رصيدك بعد التحويل: 202.4 ريال',
+                      textDirection: TextDirection.rtl,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
-              const SizedBox(width: 20),
-              const Expanded(
-                  child: Text(
-                'Your balance After this transation is 202.4 ريال',
-                style: TextStyle(color: Colors.white),
-              )),
             ],
           ),
         ),

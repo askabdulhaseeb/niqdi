@@ -39,8 +39,9 @@ class CustomGradientTextButton extends StatelessWidget {
           text,
           style: textStyle ??
               const TextStyle(
-                color: AppColors.extreamDarkGreen,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
+                color: AppColors.extreamDarkGreen,
               ),
         ),
       ),

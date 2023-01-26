@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +17,9 @@ import '../../widgets/customs/custom_slider_button.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
-  static const double _amount = 0;
   @override
   Widget build(BuildContext context) {
+    final double _amount = Random().nextInt(10) % 2 == 0 ? 0 : 143.42;
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -50,11 +52,11 @@ class AccountPage extends StatelessWidget {
             const SizedBox(height: 20),
             const CustomImageSlider(),
             const CustomGradientText('الرصيد النقدي'),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: CustomFractionAmount(amount: _amount),
             ),
-            const AccountTransationButtons(amount: _amount),
+            AccountTransationButtons(amount: _amount),
             const SizedBox(height: 40),
             if (_amount > 0)
               Stack(
@@ -82,19 +84,19 @@ class AccountPage extends StatelessWidget {
                   ),
                 ],
               ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child:
-                  CustomGradientText(_amount > 0 ? 'My Card' : 'بطاقات نقدي'),
+                  CustomGradientText(_amount > 0 ? 'بطاقاتي' : 'بطاقات نقدي'),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Text(
                 _amount > 0
-                    ? 'This is just a hint text which can be in multiphle lines'
+                    ? 'اختر أي بطاقة هنا وحول رصيدها نقدي في حسابك'
                     : 'سجل بطاقاتك هنا وحول رصيدها نقدي في حسابك',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
             ),
             const AccountCardListWidget(),
@@ -131,7 +133,7 @@ class AccountPage extends StatelessWidget {
             SizedBox(
               width: 200,
               child: CustomGradientTextButton(
-                text: 'Cards Galary',
+                text: 'معرض البطاقات',
                 onTap: () {},
               ),
             ),
