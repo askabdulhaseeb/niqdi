@@ -184,7 +184,7 @@ class AccountPage extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       context: context,
       builder: (BuildContext context) {
-        return const SignUpBottomSheet();
+        return const SignInBottomSheet();
       },
     );
   }
