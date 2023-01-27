@@ -7,6 +7,8 @@ import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
 import '../../widgets/account/account_card_list_widget.dart';
 import '../../widgets/account/profile_drawer.dart';
+import '../../widgets/auth/otp_bottom_sheet.dart';
+import '../../widgets/auth/sign_in_bottom_sheet.dart';
 import '../../widgets/customs/custom_fraction_amount.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
 import '../../widgets/customs/custom_gradient_text_button.dart';
@@ -57,10 +59,9 @@ class AccountPage extends StatelessWidget {
                 icon: CupertinoIcons.profile_circled,
                 title: 'سجّل الدخول',
                 onRight: false,
-                onTap: () {},
+                onTap: () => _onSignIn(context),
               ),
-              onPressed: () {},
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              onPressed: () => _onSignIn(context),
             ),
           ),
           const SizedBox(width: 10),
@@ -144,9 +145,17 @@ class AccountPage extends StatelessWidget {
                 style: TextStyle(fontSize: 18),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 42),
-              child: CustomSliderButton(text: '!سجلني بكل هالبرامج الحين'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 42),
+              child: CustomSliderButton(
+                text: '!سجلني بكل هالبرامج الحين',
+                icon: Icons.arrow_back_ios_new_rounded,
+                action: (p0) {},
+                iconBoderSize: 4,
+                borderRadius: 30,
+                rolling: true,
+                shape: BoxShape.circle,
+              ),
             ),
             const AccountCardListWidget(),
             const SizedBox(height: 30),
@@ -161,6 +170,21 @@ class AccountPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  _onSignIn(BuildContext context) async {
+    await showModalBottomSheet(
+      isDismissible: true,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24.0),
+      ),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      context: context,
+      builder: (BuildContext context) {
+        return const SignInBottomSheet();
+      },
     );
   }
 }
