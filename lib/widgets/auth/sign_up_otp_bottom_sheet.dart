@@ -8,16 +8,17 @@ import '../customs/custom_gradient_icon.dart';
 import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
 import '../customs/custom_text_form_field.dart';
+import 'sign_in_bottom_sheet.dart';
 
-class OTPBottomSheet extends StatefulWidget {
-  const OTPBottomSheet({required this.number, super.key});
+class SignUpOTPBottomSheet extends StatefulWidget {
+  const SignUpOTPBottomSheet({required this.number, super.key});
   final String number;
 
   @override
-  State<OTPBottomSheet> createState() => _OTPBottomSheetState();
+  State<SignUpOTPBottomSheet> createState() => _SignUpOTPBottomSheetState();
 }
 
-class _OTPBottomSheetState extends State<OTPBottomSheet> {
+class _SignUpOTPBottomSheetState extends State<SignUpOTPBottomSheet> {
   final TextEditingController _otp = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                 children: <Widget>[
                   const SizedBox(height: 16),
                   CustomGradientIcon(
-                    CupertinoIcons.profile_circled,
+                    Icons.person_add_alt,
                     size: 80,
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -63,7 +64,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                     width: width / 2.5,
                     child: const FittedBox(
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -72,12 +73,12 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                   SizedBox(
                     width: width / 1.5,
                     child: CustomSliderButton(
-                      text: 'Or Sign Up',
-                      action: (p0) async{
+                      text: 'Or Sign In',
+                      action: (p0) async {
                         Navigator.of(context).pop();
                         await BottomSheetFunction().openDrageableSheet(
                           context,
-                          child: const SignUpBottomSheet(),
+                          child: const SignInBottomSheet(),
                         );
                       },
                       icon: CupertinoIcons.person_crop_circle_badge_xmark,
@@ -105,7 +106,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                     ),
                   ),
                   CustomIconicBgWidget(
-                    icon: Icons.phone,
+                    icon: Icons.security,
                     verticalMargin: 24,
                     child: Row(
                       children: <Widget>[
@@ -128,7 +129,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                   SizedBox(
                     width: width / 1.5,
                     child: CustomSliderButton(
-                      text: 'Slide to SignIn',
+                      text: 'Slide to Sign Up',
                       action: (p0) {
                         Navigator.of(context).pop();
                       },

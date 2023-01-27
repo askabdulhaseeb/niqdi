@@ -3,11 +3,12 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
 import '../../widgets/account/account_card_list_widget.dart';
 import '../../widgets/account/profile_drawer.dart';
-import '../../widgets/auth/otp_bottom_sheet.dart';
+import '../../widgets/auth/sign_in_otp_bottom_sheet.dart';
 import '../../widgets/auth/sign_in_bottom_sheet.dart';
 import '../../widgets/auth/sign_up_bottom_sheet.dart';
 import '../../widgets/customs/custom_fraction_amount.dart';
@@ -175,17 +176,9 @@ class AccountPage extends StatelessWidget {
   }
 
   _onSignIn(BuildContext context) async {
-    await showModalBottomSheet(
-      isDismissible: true,
-      isScrollControlled: true,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24.0),
-      ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      context: context,
-      builder: (BuildContext context) {
-        return const SignInBottomSheet();
-      },
+    BottomSheetFunction().openDrageableSheet(
+      context,
+      child: const SignInBottomSheet(),
     );
   }
 }

@@ -1,23 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/phone_number.dart';
+import 'package:naqdi/widgets/auth/sign_up_bottom_sheet.dart';
 
 import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
 import '../customs/custom_gradient_icon.dart';
-import '../customs/custom_gradient_text_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
-import 'sign_in_otp_bottom_sheet.dart';
-import 'phone_number_field.dart';
-import 'sign_up_bottom_sheet.dart';
+import '../customs/custom_text_form_field.dart';
 
-class SignInBottomSheet extends StatelessWidget {
-  const SignInBottomSheet({super.key});
+class SignInOTPBottomSheet extends StatefulWidget {
+  const SignInOTPBottomSheet({required this.number, super.key});
+  final String number;
 
   @override
+  State<SignInOTPBottomSheet> createState() => _SignInOTPBottomSheetState();
+}
+
+class _SignInOTPBottomSheetState extends State<SignInOTPBottomSheet> {
+  final TextEditingController _otp = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    PhoneNumber? number;
     final double width = MediaQuery.of(context).size.width;
     return DraggableScrollableSheet(
       initialChildSize: 0.8,
@@ -92,36 +95,47 @@ class SignInBottomSheet extends StatelessWidget {
                       ),
                     ),
                   ),
-                  StatefulBuilder(builder: (
-                    BuildContext context,
-                    Function setState,
-                  ) {
-                    return CustomIconicBgWidget(
-                      icon: Icons.phone,
-                      verticalMargin: 24,
-                      child: PhoneNumberField(
-                        initialCountryCode: 'SA',
-                        onChange: (PhoneNumber? value) {
-                          setState(() {
-                            number = value;
-                          });
-                        },
-                      ),
-                    );
-                  }),
+                  const SizedBox(height: 24),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
+                    child: Text(
+                      '''You'll Revieve an SMS to number ${widget.number} Please enter it below''',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.grey),
+                    ),
+                  ),
+                  CustomIconicBgWidget(
+                    icon: Icons.phone,
+                    verticalMargin: 24,
+                    child: Row(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Resend',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ),
+                        Expanded(
+                          child: CustomTextFormField(
+                            controller: _otp,
+                            hint: 'OTP here',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                     width: width / 1.5,
-                    child: CustomGradientTextButton(
-                      text: 'Regest OTP',
-                      onTap: () async {
+                    child: CustomSliderButton(
+                      text: 'Slide to SignIn',
+                      action: (p0) {
                         Navigator.of(context).pop();
-                        BottomSheetFunction().openDrageableSheet(
-                          context,
-                          child: SignInOTPBottomSheet(
-                            number: number?.completeNumber ?? '+966',
-                          ),
-                        );
                       },
+                      icon: Icons.arrow_back_ios_new_outlined,
+                      borderRadius: 20,
+                      iconBoderSize: 3,
+                      rolling: true,
                     ),
                   ),
                 ],

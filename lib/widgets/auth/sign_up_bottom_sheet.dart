@@ -9,9 +9,10 @@ import '../customs/custom_gradient_text_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
 import '../customs/custom_text_form_field.dart';
-import 'otp_bottom_sheet.dart';
+import 'sign_in_otp_bottom_sheet.dart';
 import 'phone_number_field.dart';
 import 'sign_in_bottom_sheet.dart';
+import 'sign_up_otp_bottom_sheet.dart';
 
 class SignUpBottomSheet extends StatefulWidget {
   const SignUpBottomSheet({super.key});
@@ -131,20 +132,11 @@ class _SignUpBottomSheetState extends State<SignUpBottomSheet> {
                       text: 'Regest OTP',
                       onTap: () async {
                         Navigator.of(context).pop();
-                        await showModalBottomSheet(
-                          isDismissible: true,
-                          isScrollControlled: true,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
+                        BottomSheetFunction().openDrageableSheet(
+                          context,
+                          child: SignUpOTPBottomSheet(
+                            number: number?.completeNumber ?? '+966',
                           ),
-                          backgroundColor:
-                              Theme.of(context).scaffoldBackgroundColor,
-                          context: context,
-                          builder: (BuildContext context) {
-                            return OTPBottomSheet(
-                              number: number?.completeNumber ?? '+966',
-                            );
-                          },
                         );
                       },
                     ),
