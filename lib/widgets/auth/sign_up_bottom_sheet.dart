@@ -1,26 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:naqdi/widgets/auth/sign_up_bottom_sheet.dart';
+import 'package:intl_phone_field/phone_number.dart';
 
 import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
 import '../customs/custom_gradient_icon.dart';
+import '../customs/custom_gradient_text_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
 import '../customs/custom_text_form_field.dart';
+import 'otp_bottom_sheet.dart';
+import 'phone_number_field.dart';
+import 'sign_in_bottom_sheet.dart';
 
-class OTPBottomSheet extends StatefulWidget {
-  const OTPBottomSheet({required this.number, super.key});
-  final String number;
+class SignUpBottomSheet extends StatefulWidget {
+  const SignUpBottomSheet({super.key});
 
   @override
-  State<OTPBottomSheet> createState() => _OTPBottomSheetState();
+  State<SignUpBottomSheet> createState() => _SignUpBottomSheetState();
 }
 
-class _OTPBottomSheetState extends State<OTPBottomSheet> {
-  final TextEditingController _otp = TextEditingController();
+class _SignUpBottomSheetState extends State<SignUpBottomSheet> {
+  final TextEditingController _name = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    PhoneNumber? number;
     final double width = MediaQuery.of(context).size.width;
     return DraggableScrollableSheet(
       initialChildSize: 0.8,
@@ -47,7 +51,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                 children: <Widget>[
                   const SizedBox(height: 16),
                   CustomGradientIcon(
-                    CupertinoIcons.profile_circled,
+                    Icons.person_add_alt,
                     size: 80,
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -63,7 +67,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                     width: width / 2.5,
                     child: const FittedBox(
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -72,12 +76,12 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                   SizedBox(
                     width: width / 1.5,
                     child: CustomSliderButton(
-                      text: 'Or Sign Up',
-                      action: (p0) async{
+                      text: 'Or Sign In',
+                      action: (p0) async {
                         Navigator.of(context).pop();
                         await BottomSheetFunction().openDrageableSheet(
                           context,
-                          child: const SignUpBottomSheet(),
+                          child: const SignInBottomSheet(),
                         );
                       },
                       icon: CupertinoIcons.person_crop_circle_badge_xmark,
@@ -95,47 +99,54 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 24),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32),
-                    child: Text(
-                      '''You'll Revieve an SMS to number ${widget.number} Please enter it below''',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.grey),
-                    ),
-                  ),
+                  const SizedBox(height: 20),
                   CustomIconicBgWidget(
                     icon: Icons.phone,
-                    verticalMargin: 24,
-                    child: Row(
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Resend',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ),
-                        Expanded(
-                          child: CustomTextFormField(
-                            controller: _otp,
-                            hint: 'OTP here',
-                          ),
-                        ),
-                      ],
+                    child: CustomTextFormField(
+                      controller: _name,
+                      hint: 'Name',
                     ),
                   ),
+                  StatefulBuilder(builder: (
+                    BuildContext context,
+                    Function setState,
+                  ) {
+                    return CustomIconicBgWidget(
+                      icon: Icons.phone,
+                      verticalMargin: 8,
+                      child: PhoneNumberField(
+                        initialCountryCode: 'SA',
+                        onChange: (PhoneNumber? value) {
+                          setState(() {
+                            number = value;
+                          });
+                        },
+                      ),
+                    );
+                  }),
+                  const SizedBox(height: 30),
                   SizedBox(
                     width: width / 1.5,
-                    child: CustomSliderButton(
-                      text: 'Slide to SignIn',
-                      action: (p0) {
+                    child: CustomGradientTextButton(
+                      text: 'Regest OTP',
+                      onTap: () async {
                         Navigator.of(context).pop();
+                        await showModalBottomSheet(
+                          isDismissible: true,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24.0),
+                          ),
+                          backgroundColor:
+                              Theme.of(context).scaffoldBackgroundColor,
+                          context: context,
+                          builder: (BuildContext context) {
+                            return OTPBottomSheet(
+                              number: number?.completeNumber ?? '+966',
+                            );
+                          },
+                        );
                       },
-                      icon: Icons.arrow_back_ios_new_outlined,
-                      borderRadius: 20,
-                      iconBoderSize: 3,
-                      rolling: true,
                     ),
                   ),
                 ],

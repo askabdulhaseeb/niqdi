@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
+import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
 import '../customs/custom_gradient_icon.dart';
 import '../customs/custom_gradient_text_button.dart';
@@ -9,6 +10,7 @@ import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
 import 'otp_bottom_sheet.dart';
 import 'phone_number_field.dart';
+import 'sign_up_bottom_sheet.dart';
 
 class SignInBottomSheet extends StatelessWidget {
   const SignInBottomSheet({super.key});
@@ -68,7 +70,13 @@ class SignInBottomSheet extends StatelessWidget {
                     width: width / 1.5,
                     child: CustomSliderButton(
                       text: 'Or Sign Up',
-                       action: (p0) {},
+                      action: (p0) async {
+                        Navigator.of(context).pop();
+                        await BottomSheetFunction().openDrageableSheet(
+                          context,
+                          child: const SignUpBottomSheet(),
+                        );
+                      },
                       icon: CupertinoIcons.person_crop_circle_badge_xmark,
                       textGradient: LinearGradient(
                         colors: <Color>[
