@@ -21,4 +21,5 @@ class AppImages {
   // Icons
   static const String menuIcon = 'assets/images/logo.png';
   static const String profileIcon = 'assets/images/logo.png';
+  static const String walletIcon = 'assets/images/logo.png';
 }
