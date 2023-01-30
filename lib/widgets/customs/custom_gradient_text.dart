@@ -24,7 +24,7 @@ class CustomGradientText extends StatelessWidget {
           gradient?.createShader(
             Rect.fromLTWH(0, 0, bounds.width, bounds.height),
           ) ??
-          AppColors().pinkToBLueGradient().createShader(
+          AppColors().pinkToBlueLRGradient().createShader(
                 Rect.fromLTWH(0, 0, bounds.width, bounds.height),
               ),
       child: Text(

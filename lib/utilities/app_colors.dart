@@ -82,9 +82,17 @@ class AppColors {
           Colors.grey.withOpacity(0.1)
         ],
       );
-  pinkToBLueGradient() => const LinearGradient(
+  pinkToBlueTBGradient() => const LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
+        colors: <Color>[
+          AppColors.darkPink,
+          AppColors.darkBlue,
+        ],
+      );
+  pinkToBlueLRGradient() => const LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
         colors: <Color>[
           AppColors.darkPink,
           AppColors.darkBlue,

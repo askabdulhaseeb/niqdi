@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           fontFamily: 'Effra',
+          dividerTheme: const DividerThemeData(thickness: 0.2),
           scaffoldBackgroundColor: Colors.transparent,
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(color: Colors.black),

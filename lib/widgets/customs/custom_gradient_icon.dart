@@ -35,7 +35,7 @@ class CustomGradientIcon extends StatelessWidget {
             ? const LinearGradient(colors: <Color>[Colors.grey, Colors.grey])
                 .createShader(rect)
             : gradient?.createShader(rect) ??
-                AppColors().pinkToBLueGradient().createShader(rect);
+                AppColors().pinkToBlueTBGradient().createShader(rect);
       },
     );
   }
