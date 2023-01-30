@@ -98,7 +98,7 @@ class MenuPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 42),
               child: CustomSliderButton(
                 text: '!سجلني بكل هالبرامج الحين',
-                icon: Icons.arrow_back_ios_new_rounded,
+                icon: CupertinoIcons.arrow_left_circle,
                 action: (p0) {},
                 iconBoderSize: 4,
                 borderRadius: 30,

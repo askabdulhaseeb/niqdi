@@ -1,4 +1,5 @@
 import 'package:action_slider/src/action_slider_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../providers/app_bar_function.dart';
@@ -44,7 +45,7 @@ class CardsPage extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 16, horizontal: 42),
                 child: CustomSliderButton(
                   text: 'Sign me Up for all program',
-                  icon: Icons.arrow_back_ios_new_rounded,
+                  icon: CupertinoIcons.arrow_left_circle,
                   action: (ActionSliderController p0) {},
                   iconBoderSize: 4,
                   borderRadius: 30,

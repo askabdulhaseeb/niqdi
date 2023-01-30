@@ -8,12 +8,14 @@ import '../../widgets/customs/custom_gradient_icon.dart';
 import '../../widgets/customs/custom_gradient_icon_button.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
 import '../../widgets/customs/custom_slider_button.dart';
+import '../../widgets/menu/profile_drawer.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const ProfileDrawer(),
       endDrawerEnableOpenDragGesture: true,
       appBar: mainAppBar(),
       body: SingleChildScrollView(
