@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../utilities/app_images.dart';
 
-class AccountCardListWidget extends StatelessWidget {
-  const AccountCardListWidget({super.key});
+class MenuCardListWidget extends StatelessWidget {
+  const MenuCardListWidget({super.key});
 
   static const List<String> cards = <String>[
     AppImages.card1,

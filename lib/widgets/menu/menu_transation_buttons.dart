@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../customs/custom_gradient_icon.dart';
 
-class AccountTransationButtons extends StatelessWidget {
-  const AccountTransationButtons({required double amount, Key? key})
+class MenuTransationButtons extends StatelessWidget {
+  const MenuTransationButtons({required double amount, Key? key})
       : _amount = amount,
         super(key: key);
   final double _amount;

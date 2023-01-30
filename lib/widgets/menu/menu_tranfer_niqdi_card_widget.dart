@@ -4,8 +4,8 @@ import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
 import '../customs/custom_gradient_text_button.dart';
 
-class AccountTranderNaqdiCardWidget extends StatelessWidget {
-  const AccountTranderNaqdiCardWidget({Key? key}) : super(key: key);
+class MenuTranderNaqdiCardWidget extends StatelessWidget {
+  const MenuTranderNaqdiCardWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

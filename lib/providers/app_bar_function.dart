@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../functions/bottom_sheet_function.dart';
-import '../screens/main_pages/account_page.dart';
 import '../utilities/app_images.dart';
 import '../widgets/auth/sign_in_bottom_sheet.dart';
+import '../widgets/customs/custom_gradient_icon.dart';
 
 mainAppBar() => AppBar(
       title: Row(
@@ -53,4 +53,34 @@ _onSignIn(BuildContext context) async {
     context,
     child: const SignInBottomSheet(),
   );
+}
+
+
+class AppBarIconWidget extends StatelessWidget {
+  const AppBarIconWidget({
+    required this.icon,
+    required this.title,
+    required this.onTap,
+    required this.onRight,
+    Key? key,
+  }) : super(key: key);
+  final IconData icon;
+  final String title;
+  final VoidCallback onTap;
+  final bool onRight;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          if (!onRight) Text(title),
+          CustomGradientIcon(icon),
+          if (onRight) Text(title),
+        ],
+      ),
+    );
+  }
 }
