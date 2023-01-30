@@ -29,13 +29,8 @@ class CustomIconicBgWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: verticalMargin),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
-        gradient: gradient ??
-            const LinearGradient(
-              colors: <Color>[
-                AppColors.lightGreen,
-                AppColors.darkGreen,
-              ],
-            ),
+        gradient:
+            gradient ?? AppColors().lightToDarkGreenLessColorsLRGradient(),
       ),
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -51,27 +46,13 @@ class CustomIconicBgWidget extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(borderRadius),
-                gradient: gradient ??
-                    const LinearGradient(
-                      colors: <Color>[
-                        AppColors.lightGreen,
-                        AppColors.lightGreen,
-                        AppColors.darkGreen,
-                        AppColors.darkGreen,
-                        AppColors.darkGreen,
-                      ],
-                    ),
+                gradient: gradient ?? AppColors().lightToDarkGreenLRGradient(),
               ),
               child: CustomGradientIconButton(
                 icon,
                 onTap: () {},
                 gradient: gradient ??
-                    const LinearGradient(
-                      colors: <Color>[
-                        AppColors.lightGreen,
-                        AppColors.darkGreen,
-                      ],
-                    ),
+                   AppColors().lightToDarkGreenLessColorsLRGradient(),
               ),
             ),
           ],

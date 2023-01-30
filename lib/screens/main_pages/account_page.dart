@@ -82,20 +82,11 @@ class AccountPage extends StatelessWidget {
               ),
             ),
             const AccountCardListWidget(),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: CustomGradientText(
                 '!اشترك ببرامج ولاء أكثر',
-                gradient: LinearGradient(
-                  colors: <Color>[
-                    AppColors.lightGreen,
-                    AppColors.lightGreen,
-                    AppColors.lightGreen,
-                    AppColors.darkGreen,
-                    AppColors.darkGreen,
-                    AppColors.darkGreen,
-                  ],
-                ),
+                gradient: AppColors().lightToDarkGreenLRGradient(),
               ),
             ),
             const Padding(

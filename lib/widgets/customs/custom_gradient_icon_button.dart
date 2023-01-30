@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../utilities/app_colors.dart';
+
 class CustomGradientIconButton extends StatelessWidget {
   const CustomGradientIconButton(
     this.icon, {
@@ -19,13 +21,7 @@ class CustomGradientIconButton extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        gradient: gradient ??
-            LinearGradient(
-              colors: <Color>[
-                Colors.grey.withOpacity(0.1),
-                Colors.grey.withOpacity(0.1),
-              ],
-            ),
+        gradient: gradient ?? AppColors().greyGradient(),
       ),
       child: Icon(
         icon,

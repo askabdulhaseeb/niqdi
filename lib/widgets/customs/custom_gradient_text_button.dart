@@ -23,17 +23,7 @@ class CustomGradientTextButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          gradient: bgGradient ??
-              const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: <Color>[
-                  AppColors.lightGreen,
-                  AppColors.lightGreen,
-                  AppColors.lightGreen,
-                  AppColors.darkGreen,
-                ],
-              ),
+          gradient: bgGradient ?? AppColors().lightToDarkGreenTBGradient(),
         ),
         child: Text(
           text,

@@ -24,16 +24,9 @@ class CustomGradientText extends StatelessWidget {
           gradient?.createShader(
             Rect.fromLTWH(0, 0, bounds.width, bounds.height),
           ) ??
-          const LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: <Color>[
-              AppColors.darkPink,
-              AppColors.darkBlue,
-            ],
-          ).createShader(
-            Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-          ),
+          AppColors().pinkToBLueGradient().createShader(
+                Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+              ),
       child: Text(
         text,
         textAlign: TextAlign.center,

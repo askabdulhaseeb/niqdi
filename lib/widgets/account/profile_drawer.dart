@@ -37,12 +37,7 @@ class ProfileDrawer extends StatelessWidget {
                 child: _Tile(
                   title: 'Need Help?',
                   icon: Icons.headset_mic_outlined,
-                  gradient: LinearGradient(
-                    colors: <Color>[
-                      Colors.grey.withOpacity(0.1),
-                      Colors.grey.withOpacity(0.1)
-                    ],
-                  ),
+                  gradient: AppColors().greyGradient(),
                   iconColor: Colors.grey,
                   padding: 0,
                   onTap: () {},
@@ -64,10 +59,8 @@ class ProfileDrawer extends StatelessWidget {
                     _Tile(
                       title: 'What is Naqdi?',
                       icon: Icons.lightbulb_outline,
-                      gradient: const LinearGradient(colors: <Color>[
-                        AppColors.lightGreen,
-                        AppColors.darkGreen,
-                      ]),
+                      gradient:
+                          AppColors().lightToDarkGreenLessColorsLRGradient(),
                       onTap: () {},
                     ),
                     const Divider(),

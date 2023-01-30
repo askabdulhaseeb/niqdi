@@ -1,3 +1,4 @@
+import 'package:action_slider/src/action_slider_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart';
@@ -46,15 +47,7 @@ class SignInBottomSheet extends StatelessWidget {
                   CustomGradientIcon(
                     CupertinoIcons.profile_circled,
                     size: 80,
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: <Color>[
-                        AppColors.darkGreen,
-                        AppColors.darkGreen.withGreen(210),
-                        AppColors.lightGreen,
-                      ],
-                    ),
+                    gradient: AppColors().darkToLightGreenThreeStepTBGradient(),
                   ),
                   SizedBox(
                     width: width / 2.5,
@@ -70,7 +63,7 @@ class SignInBottomSheet extends StatelessWidget {
                     width: width / 1.5,
                     child: CustomSliderButton(
                       text: 'Or Sign Up',
-                      action: (p0) async {
+                      action: (ActionSliderController p0) async {
                         Navigator.of(context).pop();
                         await BottomSheetFunction().openDrageableSheet(
                           context,
@@ -78,18 +71,8 @@ class SignInBottomSheet extends StatelessWidget {
                         );
                       },
                       icon: CupertinoIcons.person_crop_circle_badge_xmark,
-                      textGradient: LinearGradient(
-                        colors: <Color>[
-                          Theme.of(context).textTheme.bodySmall!.color!,
-                          Theme.of(context).textTheme.bodySmall!.color!,
-                        ],
-                      ),
-                      gradient: const LinearGradient(
-                        colors: <Color>[
-                          AppColors.darkOrange,
-                          AppColors.darkPink,
-                        ],
-                      ),
+                      textGradient: AppColors().noGradient(context),
+                      gradient: AppColors().orangeToPinkGradient(),
                     ),
                   ),
                   StatefulBuilder(builder: (

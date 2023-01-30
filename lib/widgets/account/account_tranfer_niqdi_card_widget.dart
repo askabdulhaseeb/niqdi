@@ -110,15 +110,7 @@ class AccountTranderNaqdiCardWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            gradient: const LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: <Color>[
-                                AppColors.darkGreen,
-                                AppColors.lightGreen,
-                                AppColors.lightGreen,
-                              ],
-                            ),
+                            gradient: AppColors().darkToLightGreenTBGradient(),
                           ),
                           // TODO: ICON NEED TO UPDATE
                           child: const Icon(

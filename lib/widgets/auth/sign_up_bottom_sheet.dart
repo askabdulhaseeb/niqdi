@@ -54,15 +54,7 @@ class _SignUpBottomSheetState extends State<SignUpBottomSheet> {
                   CustomGradientIcon(
                     Icons.person_add_alt,
                     size: 80,
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: <Color>[
-                        AppColors.darkGreen,
-                        AppColors.darkGreen.withGreen(210),
-                        AppColors.lightGreen,
-                      ],
-                    ),
+                    gradient: AppColors().darkToLightGreenThreeStepTBGradient(),
                   ),
                   SizedBox(
                     width: width / 2.5,
@@ -86,18 +78,8 @@ class _SignUpBottomSheetState extends State<SignUpBottomSheet> {
                         );
                       },
                       icon: CupertinoIcons.person_crop_circle_badge_xmark,
-                      textGradient: LinearGradient(
-                        colors: <Color>[
-                          Theme.of(context).textTheme.bodySmall!.color!,
-                          Theme.of(context).textTheme.bodySmall!.color!,
-                        ],
-                      ),
-                      gradient: const LinearGradient(
-                        colors: <Color>[
-                          AppColors.darkOrange,
-                          AppColors.darkPink,
-                        ],
-                      ),
+                      textGradient: AppColors().noGradient(context),
+                      gradient: AppColors().orangeToPinkGradient(),
                     ),
                   ),
                   const SizedBox(height: 20),

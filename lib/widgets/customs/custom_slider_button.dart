@@ -36,13 +36,8 @@ class CustomSliderButton extends StatelessWidget {
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
-        gradient: gradient ??
-            const LinearGradient(
-              colors: <Color>[
-                AppColors.lightGreen,
-                AppColors.darkGreen,
-              ],
-            ),
+        gradient:
+            gradient ?? AppColors().lightToDarkGreenLessColorsLRGradient(),
       ),
       child: ActionSlider.standard(
         foregroundBorderRadius: BorderRadius.circular(borderRadius),
