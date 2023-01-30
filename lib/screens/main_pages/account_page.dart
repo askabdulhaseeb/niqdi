@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../functions/bottom_sheet_function.dart';
+import '../../providers/app_bar_function.dart';
 import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
 import '../../widgets/account/account_card_list_widget.dart';
@@ -26,47 +27,7 @@ class AccountPage extends StatelessWidget {
     return Scaffold(
       endDrawer: const ProfileDrawer(),
       endDrawerEnableOpenDragGesture: true,
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Builder(
-              builder: (BuildContext context) => IconButton(
-                icon: AppBarIconWidget(
-                  // TODO: menu icon need to update
-                  icon: Icons.menu,
-                  title: 'القائمة',
-                  onRight: true,
-                  onTap: () => Scaffold.of(context).openEndDrawer(),
-                ),
-                onPressed: () => Scaffold.of(context).openEndDrawer(),
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              ),
-            ),
-            const SizedBox(width: 10),
-            SizedBox(
-              height: 40,
-              width: 40,
-              child: Image.asset(AppImages.logo),
-            ),
-            const SizedBox(width: 10),
-          ],
-        ),
-        actions: <Widget>[
-          Builder(
-            builder: (BuildContext context) => IconButton(
-              icon: AppBarIconWidget(
-                icon: CupertinoIcons.profile_circled,
-                title: 'سجّل الدخول',
-                onRight: false,
-                onTap: () => _onSignIn(context),
-              ),
-              onPressed: () => _onSignIn(context),
-            ),
-          ),
-          const SizedBox(width: 10),
-        ],
-      ),
+      appBar: mainAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -170,13 +131,6 @@ class AccountPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  _onSignIn(BuildContext context) async {
-    BottomSheetFunction().openDrageableSheet(
-      context,
-      child: const SignInBottomSheet(),
     );
   }
 }
