@@ -38,11 +38,13 @@ flutter:
   fonts:
     - family: Effra
       fonts:
-        - asset: assets/fonts/Effra_Rg.ttf
+        - asset: assets/fonts/alfont_com_Effra_Lt.ttf
+          weight: 300
+        - asset: assets/fonts/alfont_com_AlFont_com_Effra_Rg.ttf
           weight: 400
-        - asset: assets/fonts/Effra_Md.ttf
+        - asset: assets/fonts/alfont_com_Effra_Md.ttf
           weight: 600
-        - asset: assets/fonts/Effra-Bold.ttf
+        - asset: assets/fonts/alfont_com_Dalton-Maag-Effra-Bold.ttf
           weight: 700
   #   - family: Trajan Pro
   #     fonts:
