@@ -7,17 +7,15 @@ import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
 import '../../widgets/account/account_card_list_widget.dart';
+import '../../widgets/account/account_tranfer_niqdi_card_widget.dart';
+import '../../widgets/account/account_transation_buttons.dart';
 import '../../widgets/account/profile_drawer.dart';
-import '../../widgets/auth/sign_in_otp_bottom_sheet.dart';
 import '../../widgets/auth/sign_in_bottom_sheet.dart';
-import '../../widgets/auth/sign_up_bottom_sheet.dart';
 import '../../widgets/customs/custom_fraction_amount.dart';
+import '../../widgets/customs/custom_gradient_icon.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
 import '../../widgets/customs/custom_gradient_text_button.dart';
 import '../../widgets/customs/custom_image_slider.dart';
-import '../../widgets/customs/custom_gradient_icon.dart';
-import '../../widgets/account/account_tranfer_niqdi_card_widget.dart';
-import '../../widgets/account/account_transation_buttons.dart';
 import '../../widgets/customs/custom_slider_button.dart';
 
 class AccountPage extends StatelessWidget {

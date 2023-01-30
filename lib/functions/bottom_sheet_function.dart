@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/auth/sign_in_bottom_sheet.dart';
-
 class BottomSheetFunction {
   openDrageableSheet(BuildContext context, {required Widget child}) async {
     await showModalBottomSheet(

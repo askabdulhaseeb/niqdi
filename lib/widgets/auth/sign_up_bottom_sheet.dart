@@ -1,3 +1,4 @@
+import 'package:action_slider/src/action_slider_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart';
@@ -9,7 +10,6 @@ import '../customs/custom_gradient_text_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
 import '../customs/custom_text_form_field.dart';
-import 'sign_in_otp_bottom_sheet.dart';
 import 'phone_number_field.dart';
 import 'sign_in_bottom_sheet.dart';
 import 'sign_up_otp_bottom_sheet.dart';
@@ -78,7 +78,7 @@ class _SignUpBottomSheetState extends State<SignUpBottomSheet> {
                     width: width / 1.5,
                     child: CustomSliderButton(
                       text: 'Or Sign In',
-                      action: (p0) async {
+                      action: (ActionSliderController p0) async {
                         Navigator.of(context).pop();
                         await BottomSheetFunction().openDrageableSheet(
                           context,

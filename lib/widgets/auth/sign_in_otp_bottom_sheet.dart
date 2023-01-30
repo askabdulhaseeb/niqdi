@@ -1,6 +1,6 @@
+import 'package:action_slider/src/action_slider_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:naqdi/widgets/auth/sign_up_bottom_sheet.dart';
 
 import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
@@ -8,6 +8,7 @@ import '../customs/custom_gradient_icon.dart';
 import '../customs/custom_iconic_bd_widget.dart';
 import '../customs/custom_slider_button.dart';
 import '../customs/custom_text_form_field.dart';
+import 'sign_up_bottom_sheet.dart';
 
 class SignInOTPBottomSheet extends StatefulWidget {
   const SignInOTPBottomSheet({required this.number, super.key});
@@ -73,7 +74,7 @@ class _SignInOTPBottomSheetState extends State<SignInOTPBottomSheet> {
                     width: width / 1.5,
                     child: CustomSliderButton(
                       text: 'Or Sign Up',
-                      action: (p0) async {
+                      action: (ActionSliderController p0) async {
                         Navigator.of(context).pop();
                         await BottomSheetFunction().openDrageableSheet(
                           context,
@@ -129,7 +130,7 @@ class _SignInOTPBottomSheetState extends State<SignInOTPBottomSheet> {
                     width: width / 1.5,
                     child: CustomSliderButton(
                       text: 'Slide to SignIn',
-                      action: (p0) {
+                      action: (ActionSliderController p0) {
                         Navigator.of(context).pop();
                       },
                       icon: Icons.arrow_back_ios_new_outlined,

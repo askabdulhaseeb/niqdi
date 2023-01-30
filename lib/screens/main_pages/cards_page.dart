@@ -6,9 +6,9 @@ class CardsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CardsPage'),
+        title: const Text('CardsPage'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('CardsPage'),
       ),
     );

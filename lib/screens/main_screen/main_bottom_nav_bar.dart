@@ -90,14 +90,14 @@ class BottomNavItem extends StatelessWidget {
             icon,
             color: isSelected
                 ? Theme.of(context).cardColor
-                : Theme.of(context).textTheme.bodyText1!.color,
+                : Theme.of(context).textTheme.bodyLarge!.color,
           ),
           Text(
             title,
             style: TextStyle(
               color: isSelected
                   ? Theme.of(context).cardColor
-                  : Theme.of(context).textTheme.bodyText1!.color,
+                  : Theme.of(context).textTheme.bodyLarge!.color,
             ),
           ),
         ],

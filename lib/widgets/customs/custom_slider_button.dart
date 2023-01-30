@@ -1,3 +1,4 @@
+import 'package:action_slider/src/state.dart';
 import 'package:flutter/material.dart';
 import 'package:action_slider/action_slider.dart';
 
@@ -48,7 +49,11 @@ class CustomSliderButton extends StatelessWidget {
         backgroundBorderRadius: BorderRadius.circular(borderRadius),
         backgroundColor: Colors.white,
         boxShadow: const <BoxShadow>[],
-        stateChangeCallback: (oldState, state, controller) {
+        stateChangeCallback: (
+          ActionSliderState? oldState,
+          ActionSliderState state,
+          ActionSliderController controller,
+        ) {
           if (state.position == 1) {
             action == null ? () {} : action!(controller);
           }
