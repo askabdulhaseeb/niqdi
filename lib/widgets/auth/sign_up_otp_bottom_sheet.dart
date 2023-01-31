@@ -2,6 +2,7 @@ import 'package:action_slider/src/action_slider_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../database/local_data_base.dart';
 import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_colors.dart';
 import '../customs/custom_gradient_icon.dart';
@@ -103,6 +104,12 @@ class _SignUpOTPBottomSheetState extends State<SignUpOTPBottomSheet> {
                           child: CustomTextFormField(
                             controller: _otp,
                             hint: 'OTP here',
+                            onChanged: (String? value) {
+                              if ((value?.length ?? 0) >= 2) {
+                                LocalDatabase.setIsLogin(true);
+                                Navigator.of(context).pop();
+                              }
+                            },
                           ),
                         ),
                       ],

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'database/local_data_base.dart';
 import 'providers/app_provider.dart';
 import 'screens/main_screen/main_screen.dart';
 import 'utilities/app_colors.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalDatabase.init();
   runApp(const MyApp());
 }
 

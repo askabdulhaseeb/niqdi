@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../database/local_data_base.dart';
 import '../../providers/app_bar_function.dart';
 import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
@@ -20,7 +21,7 @@ class MenuPage extends StatelessWidget {
   const MenuPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final double _amount = Random().nextInt(10) % 2 == 0 ? 0 : 143.42;
+    final double _amount = LocalDatabase.getIsLogin ? 143.42 : 0;
     return Scaffold(
       endDrawer: const ProfileDrawer(),
       endDrawerEnableOpenDragGesture: true,

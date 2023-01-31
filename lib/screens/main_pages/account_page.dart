@@ -2,6 +2,7 @@ import 'package:action_slider/action_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../database/local_data_base.dart';
 import '../../providers/app_bar_function.dart';
 import '../../utilities/app_colors.dart';
 import '../../widgets/customs/custom_gradient_icon.dart';
@@ -97,7 +98,9 @@ class AccountPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 1.5,
                 child: CustomSliderButton(
                   text: 'Logout',
-                  action: (ActionSliderController p0) async {},
+                  action: (ActionSliderController p0) async {
+                    LocalDatabase.setIsLogin(false);
+                  },
                   icon: CupertinoIcons.arrow_left_circle,
                   textGradient: AppColors().noGradient(context),
                   gradient: AppColors().orangeToPinkGradient(),
