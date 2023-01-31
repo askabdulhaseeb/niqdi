@@ -2,6 +2,7 @@ import 'package:action_slider/action_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../utilities/app_colors.dart';
+import '../../utilities/app_images.dart';
 import '../customs/custom_gradient_icon.dart';
 import '../customs/custom_gradient_icon_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
@@ -42,16 +43,17 @@ class _HelpCenterBottomSheetState extends State<HelpCenterBottomSheet> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: <Widget>[
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   CustomGradientIcon(
                     Icons.headphones_outlined,
+                    imagePath: AppImages.liferingIcon,
                     size: 80,
                     gradient: AppColors().darkToLightGreenThreeStepTBGradient(),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 24),
                     child: Text(
-                      'Help Center',
+                      'مركز المساعدة',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 36,
@@ -59,7 +61,7 @@ class _HelpCenterBottomSheetState extends State<HelpCenterBottomSheet> {
                     ),
                   ),
                   const Text(
-                    'Would you like to speak with a repersentitive?',
+                    'هل ترغب بالتواصل مع موظفي خدمة العملاء؟',
                     textDirection: TextDirection.rtl,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -69,7 +71,7 @@ class _HelpCenterBottomSheetState extends State<HelpCenterBottomSheet> {
                       horizontal: 42,
                     ),
                     child: CustomSliderButton(
-                      text: 'Swipe to switch to WhatsApp',
+                      text: 'اسحب للانتقال إلى WhatsApp',
                       icon: CupertinoIcons.arrow_left_circle,
                       action: (ActionSliderController p0) {},
                       iconBoderSize: 4,
@@ -79,7 +81,7 @@ class _HelpCenterBottomSheetState extends State<HelpCenterBottomSheet> {
                     ),
                   ),
                   const Text(
-                    'Would you like to speak with a repersentitive?',
+                    'أو جرّب البحث في قائمة الأسئلة الشائعة',
                     textDirection: TextDirection.rtl,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -89,7 +91,7 @@ class _HelpCenterBottomSheetState extends State<HelpCenterBottomSheet> {
                       icon: Icons.sticky_note_2_outlined,
                       child: CustomTextFormField(
                         controller: _hint,
-                        hint: 'Lable of hint',
+                        hint: 'ابحث عن سؤالك أو المشكلة التي تواجهها...',
                       ),
                     ),
                   ),
@@ -107,11 +109,19 @@ class _HelpCenterBottomSheetState extends State<HelpCenterBottomSheet> {
                     ),
                     child: Column(
                       children: <Widget>[
-                        _Tile(title: 'Question', onTap: () {}),
+                        _Tile(
+                            title: 'كيف أسحب رصيد نقدي إلى حسابي البنكي?',
+                            onTap: () {}),
                         const Divider(),
-                        _Tile(title: 'Second Question', onTap: () {}),
+                        _Tile(
+                          title: 'هل هنالك رسوم لاستعمال تطبيق نقدي?',
+                          onTap: () {},
+                        ),
                         const Divider(),
-                        _Tile(title: 'Third Question', onTap: () {}),
+                        _Tile(
+                            title:
+                                'كيف أربط برامج الولاء الحالية لدي بحسابي في نقدي إذا لم تظهر لي',
+                            onTap: () {}),
                       ],
                     ),
                   ),
@@ -143,16 +153,20 @@ class _Tile extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Icon(
               Icons.keyboard_arrow_down_sharp,
               color: Colors.grey,
             ),
-            const Spacer(),
-            Text(
-              title,
-              textDirection: TextDirection.rtl,
-              style: const TextStyle(fontSize: 18),
+            Expanded(
+              child: Text(
+                title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                textDirection: TextDirection.rtl,
+                style: const TextStyle(fontSize: 18),
+              ),
             ),
             const SizedBox(width: 16),
             CustomGradientIconButton(

@@ -29,6 +29,7 @@ class CustomGradientText extends StatelessWidget {
               ),
       child: Text(
         text,
+        textDirection: TextDirection.rtl,
         textAlign: TextAlign.center,
         style: style ??
             const TextStyle(

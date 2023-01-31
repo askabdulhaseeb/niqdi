@@ -66,6 +66,7 @@ class CustomTextFormFieldState extends State<CustomTextFormField> {
       initialValue: widget.initialValue,
       controller: widget._controller,
       readOnly: widget.readOnly,
+      textDirection: TextDirection.rtl,
       keyboardType: widget.keyboardType == TextInputType.number
           ? const TextInputType.numberWithOptions(signed: true, decimal: true)
           : widget.maxLines! > 1
@@ -87,9 +88,8 @@ class CustomTextFormFieldState extends State<CustomTextFormField> {
         fillColor: widget.color ??
             Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.15),
         hintText: widget.hint,
-        hintStyle: widget.hint!.length > 15
-            ? const TextStyle(fontSize: 14)
-            : const TextStyle(fontSize: 15),
+        hintTextDirection: TextDirection.rtl,
+        hintStyle: const TextStyle(color: Colors.grey),
         suffixIcon: (widget._controller!.text.isEmpty ||
                 !widget.showSuffixIcon ||
                 widget.showSuffixIcon == false)

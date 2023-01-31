@@ -31,11 +31,11 @@ class AccountPage extends StatelessWidget {
             children: <Widget>[
               const SizedBox(height: 40),
               const Text(
-                'Welcome',
+                'مرحبًا بك!',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const CustomGradientText(
-                'Ali Aliqahtani',
+                'علي القحطاني',
                 style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class AccountPage extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.all(16),
-                margin: const EdgeInsets.symmetric(horizontal: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.grey.withOpacity(0.1),
@@ -52,7 +52,7 @@ class AccountPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: _Tile(
-                  title: 'Need Help?',
+                  title: 'هل تحتاج للمساعدة؟',
                   icon: Icons.headset_mic_outlined,
                   gradient: AppColors().greyGradient(),
                   iconColor: Colors.grey,
@@ -81,7 +81,7 @@ class AccountPage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     _Tile(
-                      title: 'Username',
+                      title: 'تعديل اسم الحساب',
                       icon: Icons.mode_edit_outline_outlined,
                       gradient: AppColors().greyGradient(),
                       onTap: () {
@@ -93,7 +93,7 @@ class AccountPage extends StatelessWidget {
                     ),
                     const Divider(),
                     _Tile(
-                      title: 'Tearm and Condision',
+                      title: 'اتفاقية شروط الاستخدام',
                       icon: CupertinoIcons.book,
                       gradient: AppColors().greyGradient(),
                       onTap: () {
@@ -105,7 +105,7 @@ class AccountPage extends StatelessWidget {
                     ),
                     const Divider(),
                     _Tile(
-                      title: 'Privacy Policy',
+                      title: 'سياسة الخصوصية',
                       icon: CupertinoIcons.book,
                       gradient: AppColors().greyGradient(),
                       onTap: () {
@@ -122,7 +122,7 @@ class AccountPage extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width / 1.5,
                 child: CustomSliderButton(
-                  text: 'Logout',
+                  text: 'اسحب لتسجيل الخروج',
                   action: (ActionSliderController p0) async {
                     LocalDatabase.setIsLogin(false);
                   },
@@ -179,7 +179,7 @@ class _Tile extends StatelessWidget {
             Text(
               title,
               textDirection: TextDirection.rtl,
-              style: const TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(width: 16),
             CustomGradientIconButton(

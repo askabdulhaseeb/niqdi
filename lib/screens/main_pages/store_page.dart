@@ -33,12 +33,7 @@ class StorePage extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 child: AspectRatio(
                   aspectRatio: 16 / 9,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
+                  child: Image.asset(AppImages.atmCard),
                 ),
               ),
             ),
@@ -47,52 +42,18 @@ class StorePage extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                  'Your Nidqi Card to your e-wallet and pay with your Nidqi balance for awsome discount',
+                  'أضف بطاقة نقدي لمحفظتك الإلكترونية وادفع برصيدك مع خصومات عند ش',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18),
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              constraints: const BoxConstraints(maxWidth: 260, minWidth: 180),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Theme.of(context).textTheme.bodyLarge!.color,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      Text(
-                        'Arabic',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).cardColor,
-                        ),
-                      ),
-                      Text(
-                        'Apple Wallet',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).cardColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(width: 10),
-                  SizedBox(
-                    width: 60,
-                    height: 60,
-                    child: Image.asset(AppImages.walletIcon),
-                  ),
-                ],
-              ),
+            SizedBox(
+              width: 240,
+              height: 70,
+              child: Image.asset(AppImages.walletIcon),
             ),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
@@ -108,19 +69,23 @@ class StorePage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  const SizedBox(width: 16),
-                  const Text('Arabic 2.0'),
+                  const SizedBox(width: 6),
+                  const Text(
+                    'عرض المزيد',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const Spacer(),
                   const CustomGradientText(
-                    'All Stores',
+                    'جميع المتاجر',
                     style: TextStyle(
-                      fontSize: 32,
+                      fontSize: 36,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
             ),
+            const SizedBox(height: 10),
             const CustomImageSlider(),
             const SizedBox(height: 16),
             const Padding(

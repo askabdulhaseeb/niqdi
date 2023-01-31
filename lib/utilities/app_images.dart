@@ -20,11 +20,13 @@ class AppImages {
   static const String card2 = 'assets/images/card2.png';
   static const String card3 = 'assets/images/card3.png';
   static const String card4 = 'assets/images/card4.png';
+  static const String card5 = 'assets/images/card5.png';
   //
   // Icons
   static const String menuIcon = 'assets/icons/more.png';
   static const String profileIcon = 'assets/icons/personIcon.png';
   static const String cartIcon = 'assets/icons/cart.png';
+  static const String liferingIcon = 'assets/icons/lifering.png';
   static const String profileWithSetting =
       'assets/icons/profile_with_setting.png';
 }

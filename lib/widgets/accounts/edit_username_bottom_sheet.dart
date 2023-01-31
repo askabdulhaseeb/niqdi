@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../utilities/app_colors.dart';
+import '../../utilities/app_images.dart';
 import '../customs/custom_gradient_icon.dart';
 import '../customs/custom_gradient_text_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
@@ -44,14 +45,15 @@ class _EditUsernameBottomSheetState extends State<EditUsernameBottomSheet> {
                   const SizedBox(height: 16),
                   CustomGradientIcon(
                     Icons.lock_person,
+                    imagePath: AppImages.profileWithSetting,
                     size: 80,
                     gradient: AppColors().darkToLightGreenThreeStepTBGradient(),
                   ),
                   const Text(
-                    'Edit Username',
+                    'تعديل اسم الحساب',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 36,
+                      fontSize: 38,
                     ),
                   ),
                   Padding(
@@ -60,14 +62,14 @@ class _EditUsernameBottomSheetState extends State<EditUsernameBottomSheet> {
                       icon: Icons.fingerprint,
                       child: CustomTextFormField(
                         controller: _username,
-                        hint: 'Username',
+                        hint: 'علي القحطاني',
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 240,
                     child: CustomGradientTextButton(
-                      text: 'Save Changes',
+                      text: 'حفظ التعديل',
                       onTap: () {},
                     ),
                   ),

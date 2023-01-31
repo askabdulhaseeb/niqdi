@@ -14,7 +14,7 @@ mainAppBar() => AppBar(
             builder: (BuildContext context) => IconButton(
               icon: AppBarIconWidget(
                 // TODO: menu icon need to update
-                icon: Icons.menu,
+                icon: AppImages.menuIcon,
                 title: 'القائمة',
                 onRight: true,
                 onTap: () => Scaffold.of(context).openEndDrawer(),
@@ -36,7 +36,7 @@ mainAppBar() => AppBar(
         Builder(
           builder: (BuildContext context) => IconButton(
             icon: AppBarIconWidget(
-              icon: CupertinoIcons.profile_circled,
+              icon: AppImages.profileIcon,
               title: 'سجّل الدخول',
               onRight: false,
               onTap: () => _onSignIn(context),
@@ -55,7 +55,6 @@ _onSignIn(BuildContext context) async {
   );
 }
 
-
 class AppBarIconWidget extends StatelessWidget {
   const AppBarIconWidget({
     required this.icon,
@@ -64,7 +63,7 @@ class AppBarIconWidget extends StatelessWidget {
     required this.onRight,
     Key? key,
   }) : super(key: key);
-  final IconData icon;
+  final String icon;
   final String title;
   final VoidCallback onTap;
   final bool onRight;
@@ -77,7 +76,14 @@ class AppBarIconWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           if (!onRight) Text(title),
-          CustomGradientIcon(icon),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: SizedBox(
+              height: 24,
+              width: 24,
+              child: Image.asset(icon, fit: BoxFit.cover),
+            ),
+          ),
           if (onRight) Text(title),
         ],
       ),

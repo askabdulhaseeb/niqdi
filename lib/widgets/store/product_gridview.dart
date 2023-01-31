@@ -12,12 +12,18 @@ class ProductGridView extends StatelessWidget {
       AppImages.card1,
       AppImages.card2,
       AppImages.card3,
+      AppImages.card4,
+      AppImages.card5,
       AppImages.card1,
       AppImages.card2,
       AppImages.card3,
+      AppImages.card4,
+      AppImages.card5,
       AppImages.card1,
       AppImages.card2,
       AppImages.card3,
+      AppImages.card4,
+      AppImages.card5,
     ];
     return GridView.builder(
       primary: false,
@@ -34,6 +40,7 @@ class ProductGridView extends StatelessWidget {
           children: <Widget>[
             SizedBox(
               height: double.infinity,
+              width: double.infinity,
               child: Image.asset(imgList[index], fit: BoxFit.cover),
             ),
             Container(
@@ -53,9 +60,10 @@ class ProductGridView extends StatelessWidget {
                   ],
                 ),
               ),
-              child: const Icon(
-                Icons.shopping_cart_outlined,
-                color: Colors.white,
+              child: SizedBox(
+                height: 20,
+                width: 20,
+                child: Image.asset(AppImages.cartIcon),
               ),
             ),
           ],
