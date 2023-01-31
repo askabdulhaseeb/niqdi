@@ -1,5 +1,6 @@
 import 'package:action_slider/src/action_slider_widget.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../database/local_data_base.dart';
@@ -104,12 +105,6 @@ class _SignUpOTPBottomSheetState extends State<SignUpOTPBottomSheet> {
                           child: CustomTextFormField(
                             controller: _otp,
                             hint: 'OTP here',
-                            onChanged: (String? value) {
-                              if ((value?.length ?? 0) >= 2) {
-                                LocalDatabase.setIsLogin(true);
-                                Navigator.of(context).pop();
-                              }
-                            },
                           ),
                         ),
                       ],
@@ -119,7 +114,12 @@ class _SignUpOTPBottomSheetState extends State<SignUpOTPBottomSheet> {
                     width: width / 1.5,
                     child: CustomSliderButton(
                       text: 'Slide to Sign Up',
-                      action: (ActionSliderController p0) {
+                      action: (ActionSliderController p0) async {
+                        await LocalDatabase.setIsLogin(true);
+                        if (kDebugMode) {
+                          print('LogIn user: ${LocalDatabase.getIsLogin}');
+                        }
+                        if (!mounted) return;
                         Navigator.of(context).pop();
                       },
                       icon: Icons.arrow_back_ios_new_outlined,

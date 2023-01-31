@@ -1,5 +1,6 @@
 import 'package:action_slider/action_slider.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../database/local_data_base.dart';
@@ -124,7 +125,10 @@ class AccountPage extends StatelessWidget {
                 child: CustomSliderButton(
                   text: 'اسحب لتسجيل الخروج',
                   action: (ActionSliderController p0) async {
-                    LocalDatabase.setIsLogin(false);
+                    await LocalDatabase.setIsLogin(false);
+                    if (kDebugMode) {
+                      print('Logout user: ${LocalDatabase.getIsLogin}');
+                    }
                   },
                   icon: CupertinoIcons.arrow_left_circle,
                   textGradient: AppColors().noGradient(context),

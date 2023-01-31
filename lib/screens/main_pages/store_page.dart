@@ -28,13 +28,10 @@ class StorePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: Image.asset(AppImages.atmCard),
-                ),
+              padding: const EdgeInsets.all(20),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: Image.asset(AppImages.atmCard),
               ),
             ),
             const Padding(
