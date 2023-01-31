@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../functions/bottom_sheet_function.dart';
 import '../../utilities/app_images.dart';
+import 'bottom_sheets/card_bottom_sheet.dart';
 
 class MenuCardListWidget extends StatelessWidget {
   const MenuCardListWidget({super.key});
@@ -24,11 +26,19 @@ class MenuCardListWidget extends StatelessWidget {
           itemCount: cards.length,
           itemBuilder: (BuildContext context, int index) => Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: SizedBox(
-                width: width,
-                child: Image.asset(cards[index], fit: BoxFit.cover),
+            child: InkWell(
+              onTap: () {
+                BottomSheetFunction().openDrageableSheet(
+                  context,
+                  child: const CardBottomSheet(),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: SizedBox(
+                  width: width,
+                  child: Image.asset(cards[index], fit: BoxFit.cover),
+                ),
               ),
             ),
           ),

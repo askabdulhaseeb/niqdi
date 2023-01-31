@@ -3,6 +3,8 @@ class AppImages {
   //
   // Images
   static const String image = 'assets/images/logo.png';
+  static const String atmCard = 'assets/images/atmcard.png';
+  static const String walletIcon = 'assets/images/wallet.png';
   static const String backgroundGrayLogo = 'assets/images/background.png';
   static const String middelBackgroundImage =
       'assets/images/middel_background.png';
@@ -17,9 +19,12 @@ class AppImages {
   static const String card1 = 'assets/images/card1.png';
   static const String card2 = 'assets/images/card2.png';
   static const String card3 = 'assets/images/card3.png';
+  static const String card4 = 'assets/images/card4.png';
   //
   // Icons
-  static const String menuIcon = 'assets/images/logo.png';
-  static const String profileIcon = 'assets/images/logo.png';
-  static const String walletIcon = 'assets/images/logo.png';
+  static const String menuIcon = 'assets/icons/more.png';
+  static const String profileIcon = 'assets/icons/personIcon.png';
+  static const String cartIcon = 'assets/icons/cart.png';
+  static const String profileWithSetting =
+      'assets/icons/profile_with_setting.png';
 }

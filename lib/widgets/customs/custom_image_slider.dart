@@ -5,19 +5,21 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../utilities/app_images.dart';
 
 class CustomImageSlider extends StatefulWidget {
-  const CustomImageSlider({super.key});
+  const CustomImageSlider({this.list, super.key});
+  final List<String>? list;
 
   @override
   State<CustomImageSlider> createState() => _CustomImageSliderState();
 }
 
 class _CustomImageSliderState extends State<CustomImageSlider> {
-  final List<String> imgList = <String>[
-    AppImages.frame1,
-    AppImages.frame2,
-    AppImages.frame3,
-    AppImages.frame4,
-  ];
+  late List<String> imgList = widget.list ??
+      <String>[
+        AppImages.frame1,
+        AppImages.frame2,
+        AppImages.frame3,
+        AppImages.frame4,
+      ];
   int activeIndex = 0;
 
   @override
