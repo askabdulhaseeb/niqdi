@@ -41,7 +41,7 @@ class TermAndCondisionBottomSheet extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 24),
                     child: Text(
-                      'Term & Condision',
+                      'اتفاقية شروط الاستخدام',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 36,

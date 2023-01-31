@@ -41,7 +41,7 @@ class PrivacyPolicyBottomSheet extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 24),
                     child: Text(
-                      'Privacy Policy',
+                      'سياسة الخصوصية',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 36,
