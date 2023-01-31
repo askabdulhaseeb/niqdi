@@ -2,7 +2,6 @@ import 'package:action_slider/action_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../utilities/app_colors.dart';
-import '../../utilities/utilities.dart';
 import '../customs/custom_gradient_icon.dart';
 import '../customs/custom_gradient_icon_button.dart';
 import '../customs/custom_iconic_bd_widget.dart';
