@@ -1,6 +1,4 @@
-import 'dart:math';
-
-import 'package:action_slider/src/action_slider_widget.dart';
+import 'package:action_slider/action_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,15 +6,15 @@ import '../../database/local_data_base.dart';
 import '../../providers/app_bar_function.dart';
 import '../../utilities/app_colors.dart';
 import '../../utilities/app_images.dart';
-import '../../widgets/menu/menu_card_list_widget.dart';
-import '../../widgets/menu/menu_tranfer_niqdi_card_widget.dart';
-import '../../widgets/menu/menu_transation_buttons.dart';
-import '../../widgets/menu/profile_drawer.dart';
 import '../../widgets/customs/custom_fraction_amount.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
 import '../../widgets/customs/custom_gradient_text_button.dart';
 import '../../widgets/customs/custom_image_slider.dart';
 import '../../widgets/customs/custom_slider_button.dart';
+import '../../widgets/menu/menu_card_list_widget.dart';
+import '../../widgets/menu/menu_tranfer_niqdi_card_widget.dart';
+import '../../widgets/menu/menu_transation_buttons.dart';
+import '../../widgets/menu/profile_drawer.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({Key? key}) : super(key: key);
