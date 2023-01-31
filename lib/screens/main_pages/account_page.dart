@@ -3,8 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../database/local_data_base.dart';
+import '../../functions/bottom_sheet_function.dart';
 import '../../providers/app_bar_function.dart';
 import '../../utilities/app_colors.dart';
+import '../../widgets/accounts/edit_username_bottom_sheet.dart';
+import '../../widgets/accounts/help_center_bottom_sheet.dart';
+import '../../widgets/accounts/privacy_policy_bottom_sheet.dart';
+import '../../widgets/accounts/term_condision_bottom_sheet.dart';
 import '../../widgets/customs/custom_gradient_icon.dart';
 import '../../widgets/customs/custom_gradient_icon_button.dart';
 import '../../widgets/customs/custom_gradient_text.dart';
@@ -53,7 +58,12 @@ class AccountPage extends StatelessWidget {
                   iconColor: Colors.grey,
                   showNextButton: false,
                   padding: 0,
-                  onTap: () {},
+                  onTap: () {
+                    BottomSheetFunction().openDrageableSheet(
+                      context,
+                      child: const HelpCenterBottomSheet(),
+                    );
+                  },
                 ),
               ),
               Container(
@@ -74,21 +84,36 @@ class AccountPage extends StatelessWidget {
                       title: 'Username',
                       icon: Icons.mode_edit_outline_outlined,
                       gradient: AppColors().greyGradient(),
-                      onTap: () {},
+                      onTap: () {
+                        BottomSheetFunction().openDrageableSheet(
+                          context,
+                          child: const EditUsernameBottomSheet(),
+                        );
+                      },
                     ),
                     const Divider(),
                     _Tile(
                       title: 'Tearm and Condision',
                       icon: CupertinoIcons.book,
                       gradient: AppColors().greyGradient(),
-                      onTap: () {},
+                      onTap: () {
+                        BottomSheetFunction().openDrageableSheet(
+                          context,
+                          child: const TermAndCondisionBottomSheet(),
+                        );
+                      },
                     ),
                     const Divider(),
                     _Tile(
                       title: 'Privacy Policy',
                       icon: CupertinoIcons.book,
                       gradient: AppColors().greyGradient(),
-                      onTap: () {},
+                      onTap: () {
+                        BottomSheetFunction().openDrageableSheet(
+                          context,
+                          child: const PrivacyPolicyBottomSheet(),
+                        );
+                      },
                     ),
                   ],
                 ),

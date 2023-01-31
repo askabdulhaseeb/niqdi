@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:action_slider/src/action_slider_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -100,7 +101,7 @@ class MenuPage extends StatelessWidget {
               child: CustomSliderButton(
                 text: '!سجلني بكل هالبرامج الحين',
                 icon: CupertinoIcons.arrow_left_circle,
-                action: (p0) {},
+                action: (ActionSliderController p0) {},
                 iconBoderSize: 4,
                 borderRadius: 30,
                 rolling: true,
