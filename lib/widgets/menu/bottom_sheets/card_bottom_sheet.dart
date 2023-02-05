@@ -9,6 +9,7 @@ import '../../../utilities/app_images.dart';
 import '../../customs/custom_gradient_icon.dart';
 import '../../customs/custom_slider_button.dart';
 import '../../transaction/transaction_succefully.dart';
+import '../../transaction/transfer_to_bank_bottom_sheet.dart';
 
 class CardBottomSheet extends StatefulWidget {
   const CardBottomSheet(
@@ -261,13 +262,14 @@ class _CardBottomSheetState extends State<CardBottomSheet> {
                 Navigator.of(context).pop();
                 await BottomSheetFunction().openDrageableSheet(
                   context,
-                  child: const TransactionSuccefully(),
+                  // child: const TransactionSuccefully(),
+                  child: TranferToBankBottomSheet(imageURL: widget.imageUrl),
                 );
               },
               iconBoderSize: 4,
-              borderRadius: 30,
+              borderRadius: 20,
               rolling: true,
-              shape: BoxShape.circle,
+              shape: BoxShape.rectangle,
             ),
           ),
         ],

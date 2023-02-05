@@ -5,10 +5,12 @@ class CustomFractionAmount extends StatelessWidget {
   const CustomFractionAmount({
     required this.amount,
     this.textDirection,
+    this.fontSize = 20,
     super.key,
   });
   final double amount;
   final TextDirection? textDirection;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +20,20 @@ class CustomFractionAmount extends StatelessWidget {
         style: TextStyle(
           color: Theme.of(context).textTheme.bodyLarge!.color,
           fontWeight: FontWeight.bold,
-          fontSize: 20,
+          fontSize: fontSize + 6,
         ),
         children: <TextSpan>[
           TextSpan(
               text: Utilities().beforeFrctional(amount),
-              style: const TextStyle(fontSize: 48)),
+              style: TextStyle(fontSize: (fontSize * 2) + (fontSize / 1.5))),
           TextSpan(
             text: amount
                 .toStringAsFixed(2)
                 .substring(amount.toString().indexOf('.')),
           ),
-          const TextSpan(
+          TextSpan(
             text: ' ريال',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
           ),
         ],
       ),

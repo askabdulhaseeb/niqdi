@@ -28,8 +28,8 @@ class SwapCardWidget extends StatelessWidget {
       height: height ?? width * 0.5,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Color(0xfffafaf9),
-        border: Border.all(color: Color(0xffe8e8e8)),
+        color: const Color(0xfffafaf9),
+        border: Border.all(color: const Color(0xffe8e8e8)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -42,18 +42,18 @@ class SwapCardWidget extends StatelessWidget {
                 isTransaction == true
                     ? GradientText(
                         text1,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
-                        gradient: LinearGradient(colors: [
+                        gradient: const LinearGradient(colors: [
                           Color(0xff3ffa84),
                           Color(0xff01d18f),
                         ]),
                       )
                     : Text(
                         text1,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -62,18 +62,18 @@ class SwapCardWidget extends StatelessWidget {
                 isTransaction == true
                     ? GradientText(
                         text2,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
-                        gradient: LinearGradient(colors: [
+                        gradient: const LinearGradient(colors: [
                           Color(0xff3ffa84),
                           Color(0xff01d18f),
                         ]),
                       )
                     : Text(
                         text2,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class SwapCardWidget extends StatelessWidget {
                       ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Row(
@@ -89,13 +89,13 @@ class SwapCardWidget extends StatelessWidget {
               children: <Widget>[
                 Text(
                   text3,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                   ),
                 ),
                 Text(
                   text4,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                   ),
                   //textDirection: TextDirection.rtl,
