@@ -30,6 +30,8 @@ class AppImages {
   static const String refreshIcon = 'assets/icons/refreshIcon.png';
   static const String conversionIcon = 'assets/icons/conversionIcon.png';
   static const String cinfoIcon = 'assets/icons/cinfo.png';
+  static const String backgroundIcon = 'assets/icons/threes.png';
+  static const String progressIcon = 'assets/icons/progress.png';
   static const String profileWithSetting =
       'assets/icons/profile_with_setting.png';
 }
