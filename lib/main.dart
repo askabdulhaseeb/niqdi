@@ -5,7 +5,6 @@ import 'database/local_data_base.dart';
 import 'providers/app_provider.dart';
 import 'screens/main_screen/main_screen.dart';
 import 'utilities/app_colors.dart';
-import 'widgets/transaction/transaction_succefully.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
           ),
           primaryColor: AppColors.darkGreen,
         ),
-        home: const TransactionSuccefully(),
+        home: const MainScreen(),
       ),
     );
   }
