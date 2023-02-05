@@ -13,7 +13,6 @@ mainAppBar() => AppBar(
           Builder(
             builder: (BuildContext context) => IconButton(
               icon: AppBarIconWidget(
-                // TODO: menu icon need to update
                 icon: AppImages.menuIcon,
                 title: 'القائمة',
                 onRight: true,

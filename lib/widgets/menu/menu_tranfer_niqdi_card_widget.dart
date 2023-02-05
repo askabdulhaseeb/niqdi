@@ -106,16 +106,12 @@ class MenuTranderNaqdiCardWidget extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 6),
-                        Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            gradient: AppColors().darkToLightGreenTBGradient(),
-                          ),
-                          // TODO: ICON NEED TO UPDATE
-                          child: const Icon(
-                            Icons.update_outlined,
-                            color: AppColors.extreamDarkGreen,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            AppImages.refreshIcon,
+                            height: 20,
+                            fit: BoxFit.fill,
                           ),
                         ),
                       ],
