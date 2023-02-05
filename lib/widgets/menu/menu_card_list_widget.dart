@@ -30,7 +30,10 @@ class MenuCardListWidget extends StatelessWidget {
               onTap: () {
                 BottomSheetFunction().openDrageableSheet(
                   context,
-                  child: const CardBottomSheet(),
+                  child: CardBottomSheet(
+                    width: width,
+                    imageUrl: cards[index],
+                  ),
                 );
               },
               child: ClipRRect(

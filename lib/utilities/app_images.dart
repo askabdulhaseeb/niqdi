@@ -27,6 +27,9 @@ class AppImages {
   static const String profileIcon = 'assets/icons/personIcon.png';
   static const String cartIcon = 'assets/icons/cart.png';
   static const String liferingIcon = 'assets/icons/lifering.png';
+  static const String refreshIcon = 'assets/icons/refreshIcon.png';
+  static const String conversionIcon = 'assets/icons/conversionIcon.png';
+  static const String cinfoIcon = 'assets/icons/cinfo.png';
   static const String profileWithSetting =
       'assets/icons/profile_with_setting.png';
 }
