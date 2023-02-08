@@ -52,7 +52,59 @@ class CustomIconicBgWidget extends StatelessWidget {
                 icon,
                 onTap: () {},
                 gradient: gradient ??
-                   AppColors().lightToDarkGreenLessColorsLRGradient(),
+                    AppColors().lightToDarkGreenLessColorsLRGradient(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomIconicBgWidget2 extends StatelessWidget {
+  const CustomIconicBgWidget2({
+    required this.child,
+    required this.icon,
+    this.verticalMargin = 16,
+    this.borderRadius = 12,
+    this.iconBoderSize = 4,
+    this.shape,
+    this.gradient,
+    super.key,
+  });
+  final Widget child;
+  final String icon;
+  final double verticalMargin;
+  final double borderRadius;
+  final double iconBoderSize;
+  final BoxShape? shape;
+  final Gradient? gradient;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(3),
+      margin: EdgeInsets.symmetric(vertical: 4),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(borderRadius),
+        gradient:
+            gradient ?? AppColors().lightToDarkGreenLessColorsLRGradient(),
+      ),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        decoration: BoxDecoration(
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        child: Row(
+          children: <Widget>[
+            Expanded(child: child),
+            const SizedBox(width: 6),
+            Container(
+              child: Image.asset(
+                icon,
+                height: 35,
               ),
             ),
           ],

@@ -72,3 +72,50 @@ class ProductGridView extends StatelessWidget {
     );
   }
 }
+
+class CustomProductGridView extends StatelessWidget {
+  const CustomProductGridView({super.key, required this.imgList});
+  final List<String> imgList;
+  @override
+  Widget build(BuildContext context) {
+    // final List<String> imgList = <String>[
+    //   AppImages.card1,
+    //   AppImages.card2,
+    //   AppImages.card3,
+    //   AppImages.card4,
+    //   AppImages.card5,
+    //   AppImages.card1,
+    //   AppImages.card2,
+    //   AppImages.card3,
+    //   AppImages.card4,
+    //   AppImages.card5,
+    //   AppImages.card1,
+    //   AppImages.card2,
+    //   AppImages.card3,
+    //   AppImages.card4,
+    //   AppImages.card5,
+    // ];
+    return GridView.builder(
+      primary: false,
+      shrinkWrap: true,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
+      itemCount: imgList.length,
+      itemBuilder: (BuildContext context, int index) => ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Stack(
+          children: <Widget>[
+            SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Image.asset(imgList[index], fit: BoxFit.cover),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

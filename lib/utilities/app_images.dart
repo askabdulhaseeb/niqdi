@@ -21,7 +21,7 @@ class AppImages {
   static const String card3 = 'assets/images/card3.png';
   static const String card4 = 'assets/images/card4.png';
   static const String card5 = 'assets/images/card5.png';
-  //
+  //rectangles
   // Icons
   static const String menuIcon = 'assets/icons/more.png';
   static const String profileIcon = 'assets/icons/personIcon.png';
@@ -32,6 +32,25 @@ class AppImages {
   static const String cinfoIcon = 'assets/icons/cinfo.png';
   static const String backgroundIcon = 'assets/icons/threes.png';
   static const String progressIcon = 'assets/icons/progress.png';
+  static const String shareIcon = 'assets/icons/share.png';
+  static const String orangeCircle = 'assets/icons/orangeCircle.png';
+  static const String greenCircle = 'assets/icons/greenCircle.png';
+  static const String blackCircle = 'assets/icons/blackCircle.png';
+  static const String mailIcon = 'assets/icons/mailIcon.png';
+  static const String musicIcon = 'assets/icons/musicIcon.png';
+  static const String partyIcon = 'assets/icons/partyIcon.png';
+  static const String settingIcon = 'assets/icons/settingIcon.png';
+  static const String sofaIcon = 'assets/icons/sofaIcon.png';
   static const String profileWithSetting =
       'assets/icons/profile_with_setting.png';
+
+  //Slider
+  static const String sliderBackground = 'assets/images/sliderBackground.png';
+
+
+  //gridview
+  static const String group1 = 'assets/images/group1.png';
+  static const String group2 = 'assets/images/group2.png';
+  static const String group3 = 'assets/images/group3.png';
+  static const String group4 = 'assets/images/group4.png';
 }

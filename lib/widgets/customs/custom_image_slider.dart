@@ -72,3 +72,78 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
     );
   }
 }
+
+class CustomImageSliderForFullScreen extends StatefulWidget {
+  const CustomImageSliderForFullScreen({this.list, super.key});
+  final List<String>? list;
+
+  @override
+  State<CustomImageSliderForFullScreen> createState() =>
+      _CustomImageSliderForFullScreenState();
+}
+
+class _CustomImageSliderForFullScreenState
+    extends State<CustomImageSliderForFullScreen> {
+  late List<String> imgList = widget.list ??
+      <String>[
+        AppImages.sliderBackground,
+        AppImages.sliderBackground,
+        AppImages.sliderBackground,
+        AppImages.sliderBackground,
+      ];
+  int activeIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Builder(
+          builder: (BuildContext context) {
+            final double height = MediaQuery.of(context).size.width * 0.8;
+            return CarouselSlider(
+              options: CarouselOptions(
+                height: height,
+                onPageChanged: (int index, CarouselPageChangedReason reason) =>
+                    setState(() => activeIndex = index),
+                viewportFraction: 1.0,
+                enlargeCenterPage: false,
+                // autoPlay: false,
+              ),
+              items: imgList
+                  .map((item) => Container(
+                        child: Center(
+                            child: Image.asset(
+                          item,
+                          fit: BoxFit.cover,
+                          height: height,
+                        )),
+                      ))
+                  .toList(),
+            );
+          },
+        ),
+        Positioned(
+          bottom: 70,
+          right: 30,
+          left: 30,
+          child: Align(
+              alignment: Alignment.center, child: buildIndicator(context)),
+        ),
+      ],
+    );
+  }
+
+  Widget buildIndicator(BuildContext context) {
+    return AnimatedSmoothIndicator(
+      activeIndex: activeIndex,
+      count: imgList.length,
+      effect: WormEffect(
+        dotHeight: 6,
+        dotWidth: 8,
+        spacing: 3,
+        dotColor: const Color(0xFFD9D9D9),
+        activeDotColor: Theme.of(context).primaryColor,
+      ),
+    );
+  }
+}
